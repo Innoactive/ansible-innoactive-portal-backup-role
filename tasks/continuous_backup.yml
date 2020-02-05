@@ -1,0 +1,18 @@
+---
+- name: Start Backup container
+  docker_container:
+    name: "{{ backup.container_name }}"
+    image: "{{ backup.image }}"
+    restart_policy: unless-stopped
+    env:
+      POSTGRES_HOST: "{{ backup.postgres_host }}"
+      POSTGRES_DB: "{{ backup.databases }}"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      BACKUP_DIR: "{{ backup.directory }}"
+    volumes:
+      # Save the database backups on the media volume since that can be seen as secure.
+      - "{{ backup.volume_name }}:/backup_volume"
+    networks_cli_compatible: true
+    networks:
+      - name: "{{ backup.network }}"

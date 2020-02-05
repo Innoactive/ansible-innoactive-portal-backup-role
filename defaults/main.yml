@@ -1,0 +1,9 @@
+---
+backup:
+  container_name: "{{ hub_service_prefix }}_backup"
+  volume_name: "{{ volume_names.media }}"
+  network: "{{ network_names.main }}"
+  directory: "/backup_volume/backups/database"
+  image: "prodrigestivill/postgres-backup-local"
+  databases: postgres, customization
+  postgres_host: "{{ container_names.database }}"

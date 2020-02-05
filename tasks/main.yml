@@ -1,0 +1,5 @@
+---
+
+- name: Setup continuous Backup
+  become: true
+  import_tasks: continuous_backup.yml
