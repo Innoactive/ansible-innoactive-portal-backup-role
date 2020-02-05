@@ -1,9 +1,8 @@
 ---
-backup:
-  container_name: "{{ hub_service_prefix }}_backup"
-  volume_name: "{{ volume_names.media }}"
-  network: "{{ network_names.main }}"
-  directory: "/backup_volume/backups/database"
-  image: "prodrigestivill/postgres-backup-local"
-  databases: postgres, customization
-  postgres_host: "{{ container_names.database }}"
+container_name: "hub_backup"
+volume_name: "hub_media"
+network: "hub_network"
+directory: "/backup_volume/backups/database"
+image: "prodrigestivill/postgres-backup-local"
+databases: postgres, customization
+postgres_host: "hub_db"
