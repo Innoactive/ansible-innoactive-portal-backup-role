@@ -3,6 +3,14 @@ Ansible-Innoactive-Hub-Backup-Role
 
 This role sets up a continuous backup system, running inside a docker container, that takes care of creating database backups on a daily, weekly and monthly basis.
 
+How to Install
+------------
+
+To install this role locally, simply run 
+`ansible-galaxy install git+git@github.com:Innoactive/ansible-innoactive-hub-backup-role.git`
+
+or clone the repository and run the `install.sh` file.
+
 Requirements
 ------------
 
