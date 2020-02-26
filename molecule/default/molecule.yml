@@ -5,10 +5,8 @@ dependency:
     role-file: molecule/requirements.yml
 driver:
   name: docker
-lint:
-  name: yamllint
 platforms:
-  - name: moleule-docker
+  - name: molecule-docker
     image: debian:stretch-slim
 provisioner:
   name: ansible
