@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Helper script to install the role locally.
+
 # cleanup
 sudo rm -rf ~/.ansible/roles/ansible-innoactive-hub-backup-role
 

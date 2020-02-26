@@ -1,17 +1,25 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: molecule/requirements.yml
 driver:
   name: docker
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: centos:7
+  - name: moleule-docker
+    image: debian:stretch-slim
 provisioner:
   name: ansible
+  playbooks:
+    converge: playbook.yml
+    prepare: prepare.yml
   lint:
     name: ansible-lint
+    options:
+      exclude:
+        - $HOME/.ansible/roles
 verifier:
   name: testinfra
   lint:
