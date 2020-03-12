@@ -1,6 +1,8 @@
 ---
-- name: Converge
-  hosts: all
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
 
   vars:
     database:
@@ -24,7 +26,3 @@
       #   - name: "{{ network_name}}"
       #     aliases:
       #       - db
-
-
-  # roles:
-  #   - role: ansible-innoactive-hub-backup-role

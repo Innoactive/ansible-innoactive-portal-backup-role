@@ -3,14 +3,14 @@
   hosts: all
   gather_facts: true
 
-  roles:
-    # Install Pip
-    - role: geerlingguy.pip
-      become: true
-      vars:
-        pip_package: python3-pip
-        pip_install_packages:
-          - name: docker
-      tags:
-        - prerequisites
-        - pip
+  # roles:
+  #   # Install Pip
+  #   - role: geerlingguy.pip
+  #     become: true
+  #     vars:
+  #       pip_package: python3-pip
+  #       pip_install_packages:
+  #         - name: docker
+  #     tags:
+  #       - prerequisites
+  #       - pip
