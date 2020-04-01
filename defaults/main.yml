@@ -3,6 +3,6 @@ container_name: "hub_backup"
 volume_name: "hub_media"
 network: "hub_network"
 directory: "/backup_volume/backups/database"
-image: "prodrigestivill/postgres-backup-local"
+image: "registry.docker.innoactive.de/docker-postgres-backup-local:0.1.0"
 databases: postgres, customization
 postgres_host: "hub_db"
