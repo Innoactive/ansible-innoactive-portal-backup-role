@@ -14,5 +14,6 @@
       # Save the database backups on the media volume since that can be seen as secure.
       - "{{ volume_name }}:/backup_volume"
     networks_cli_compatible: true
+    network_mode: default
     networks:
       - name: "{{ network }}"
